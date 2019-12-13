@@ -1,0 +1,48 @@
+<div class="container">
+  
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Type</th>
+      <th scope="col">Strike/Price</th>
+      <th scope="col">Direction</th>
+      <th scope="col">Premium</th>
+    </tr>
+  </thead>
+
+  <tbody *ngIf="positionsList$">
+    <tr *ngFor="let position of positionsList$ | async; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>{{ position.positionType }}</td>
+    <td *ngIf="position.positionType == 'Options'">{{ position.strikePrice | number }} {{position.optionKind}}</td>
+    <td *ngIf="position.positionType == 'Futures'">{{ position.strikePrice | number }} </td>
+    <td>{{position.direction}}</td>
+    <td *ngIf="position.positionType == 'Options'"> {{ position.premium }}</td>
+    <td *ngIf="position.positionType == 'Futures'"> - </td>
+    </tr>
+    <!-- <tr> 
+      <th scope="row">1</th>
+      <td>Long</td>
+      <td>700 CE</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Short</td>
+      <td>12000 PE</td>
+      <td>135</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Long</td>
+      <td>75 PE</td>
+      <td>1.2</td>
+    </tr> -->
+  </tbody>
+  <!-- </div> -->
+</table>
+<form (ngSubmit)="onSubmit()"  style="margin: 10px; margin-right: 15px;" >
+<button type="submit" class="btn btn-primary">Create Payoff Graph</button>
+  </form>
+</div>

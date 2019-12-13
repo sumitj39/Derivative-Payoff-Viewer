@@ -1,0 +1,35 @@
+<div class="container">
+<form [formGroup]="portfolioInputForm" (ngSubmit)="onSubmit(portfolioInputForm.value)"  style="margin: 10px; margin-right: 15px;" >
+  <!-- [formGroup]="portfolioInputForm" (ngSubmit)="onSubmit(portfolioInputForm.value)"  -->
+  <div class="form-group">
+    <label for="positionType"> Position Type </label>
+    <select [(ngModel)]="positionType" class="form-control" formControlName="positionType">
+      <option *ngFor="let opt of positionTypes" [value]="opt" selected>{{opt}}</option>
+    </select>
+  </div>
+  <div class="form-group" *ngIf="positionType == 'Options'">
+    <label for="optionKind"> Option Kind (Call/Put) </label>
+    <select class="form-control" formControlName="optionKind">
+      <option *ngFor="let opt of optionKinds" [value]="opt">{{opt}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="direction">Direction</label>
+    <select class="form-control" formControlName="direction">
+      <option *ngFor="let dir of directions" [value]="dir"> {{dir}} </option>
+    </select>
+  </div>
+  <div class="form-group" *ngIf="positionType">
+    <label *ngIf="positionType == 'Options'" for="strikePrice">Strike Price</label>
+    <label *ngIf="positionType == 'Futures'" for="strikePrice">Price</label>
+    <input type="number" class="form-control" formControlName="strikePrice"  placeholder="Strike Price (Eg 100)">
+  </div>
+  <div class="form-group"  *ngIf="positionType == 'Options'">
+    <label for="premium">Premium Price</label>
+    <input type="number" class="form-control" formControlName="premium"  placeholder="Premium Price (Eg 2)">
+  </div>
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
+</div>
+<!-- [formGroup]="inputform" (ngSubmit)="onSubmit()"  -->

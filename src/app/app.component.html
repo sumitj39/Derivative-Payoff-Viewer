@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="">
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:30%">
+  <h3 class="w3-bar-item">Current positions</h3>
+  <app-positions-list> </app-positions-list>
+  <h3 class="w3-bar-item">Add new position</h3>
+  <app-inputform></app-inputform>
+</div>
+
+<!-- Page Content -->
+<div style="margin-left:30%">
+
+<div class="w3-container w3-teal">
+  <h1>Payoff Diagram</h1>
+</div>
+
+<div class="w3-container">
+  <app-graph-plot></app-graph-plot> 
+</div>
+
+</div>
+      
+</body>
+</html>

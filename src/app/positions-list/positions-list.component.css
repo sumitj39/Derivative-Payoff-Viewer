@@ -1,0 +1,12 @@
+li {
+  margin: 10px;
+}
+ul {
+  display: block;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #009688;
+    border-color: #009688;
+}
