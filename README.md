@@ -20,7 +20,10 @@ Run ```ng serve``` command to start the dev server.
 ng serve
 ```
 ## Screenshots
+Whole UI
 ![Alt text](https://user-images.githubusercontent.com/13235252/70803171-710ce280-1dd9-11ea-91af-e721a19a4243.png "Screenshot")
+Chart
+![Alt text](https://user-images.githubusercontent.com/13235252/70803495-33f52000-1dda-11ea-873e-e93130c8995d.png "Screenshot 2")
 ## Contributing
 If you liked it and would like to add features, please raise a pull request. 
 
